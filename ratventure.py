@@ -132,14 +132,14 @@ def sense_orb(): #sensing orb function
 def generate(item): #generation of orb or town
     possible = []
     if item == 'Orb': #if parameter is 'Orb', generate orb
-        for row in range(4,8): #generate to right
+        for row in range(4,8): #generate to bottom
             for col in range(8):
-                if world_map[col][row] == ' ':
+                if world_map[row][col] == ' ':
                     possible.append([row,col])
                     
-        for row in range(8): #generate at bottom
+        for row in range(8): #generate at right
             for col in range(4,8):
-                if world_map[col][row] == ' ':
+                if world_map[row][col] == ' ':
                     possible.append([row,col])
         return possible[randint(0,len(possible))]
 
