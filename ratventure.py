@@ -6,7 +6,6 @@
 
 #importing libraries
 from random import randint
-from math import floor
 
 #setting global variables
 global player, world_map
@@ -316,7 +315,7 @@ while True:
                     mob_list = [bat, rat, skeleton]
                     
                     mob = mob_list[randint(0,len(mob_list)-1)] #pick 1 from mob_list
-                    day_multipler = floor(player['Day']/10) #as days are longer, monsters are harder
+                    day_multipler = player['Day']//10 #as days are longer, monsters are harder
                     mob_hp = mob['HP'] #set reference base hp of mob
                     mob['Min Damage'] += day_multipler
                     mob['Max Damage'] += day_multipler
